@@ -1,0 +1,9 @@
+sudo: required
+services: 
+    - docker
+
+before_install:
+    - docker build -t nkwochidubem/docker-react -f Dockerfile.dev .
+
+script:
+    - docker run nkwochidubem/docker-react npm run test -- --coverage
