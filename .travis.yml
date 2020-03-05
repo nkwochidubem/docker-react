@@ -7,3 +7,11 @@ before_install:
 
 script:
     - docker run nkwochidubem/docker-react npm run test -- --watchAll=false
+
+deploy:
+    - provider: heroku
+      api_key: 
+        secure: "9ce5b9b5-5079-4bcb-9ac3-50d0216c4175"
+      on: 
+        branch: master
+      app: docker-react
